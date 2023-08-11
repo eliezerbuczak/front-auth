@@ -2,23 +2,43 @@ const login = () => {
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const verifyEmail = verify(email)
-    const verifySenha = verify(password)
+    let campos = [];
+    campos.push(email);
+    campos.push(password);
 
-    if (verifyEmail === false) {
-        alert('email inválido!')
-        return
+    if (verify(campos)) {
+        const data = {
+            email: email,
+            password: password,
+        }
+
+        try {
+            axios.post("http://192.168.1.26/api/auth/login", data)
+                .then(function (response) {
+                    window.location.href = "./logado.html"
+
+                })
+                .catch(function (error) {
+                    alert(error.message);
+                    return
+                });
+        } catch (error) {
+            alert('erro ao acessar a biblioteca')
+        }
+    } else {
+        alert('campos nao preenchidos')
     }
-    if (verifySenha === false) {
-        alert('senha inválida!')
-        return
-    }
+
 }
 
-const verify = () => {
-    if (campo.trim() === '' || campo.trim() === null || campo.trim() === undefined) {
-        return false
-    } else return true
+const verify = (campos) => {
+
+    for (let i = 0; i < campos.length; i++) {
+        if (campos[i] === '' || campos[i] === null || campos[i] === undefined) {
+            return false
+        }
+    }
+    return true
 }
 
 const criarConta = () => {

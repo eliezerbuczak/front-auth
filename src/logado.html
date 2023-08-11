@@ -8,10 +8,34 @@
     <title>Logado </title>
 </head>
 
-<body class="bg-white container h-screen mx-auto flex justify-center items-center">
-    <nav>
-        <h1>teste</h1>
-    </nav>
+<body class="bg-white container h-screen mx-auto flex flex-col">
+    <h1 class="mt-10 font-bold text-4xl text-center">Pesquisar por nome</h1>
+
+    <table class="bg-blue-950 mt-20 mx-auto text-white rounded w-8/12 text-center">
+        <thead>
+            <tr>
+                <td class="border-2 border-white">id</td>
+                <td class="border-2 border-white">nome</td>
+                <td class="border-2 border-white">email</td>
+                <td class="border-2 border-white">criado em</td>
+            </tr>
+        </thead>
+        <tbody class="border-2 border-white">
+            <tr>
+                <td class="border-l-2 border-r-2 border-white">id</td>
+                <td class="border-l-2 border-r-2 border-white">nome</td>
+                <td class="border-l-2 border-r-2 border-white">email</td>
+                <td class="border-l-2 border-r-2 border-white">criado em</td>
+            </tr>
+            <tr>
+                <td class="border-l-2 border-r-2 border-white">id</td>
+                <td class="border-l-2 border-r-2 border-white">nome</td>
+                <td class="border-l-2 border-r-2 border-white">email</td>
+                <td class="border-l-2 border-r-2 border-white">criado em</td>
+            </tr>
+        </tbody>
+    </table>
+
 
     <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
