@@ -44,3 +44,24 @@ const verify = (campos) => {
 const criarConta = () => {
     window.location.href = "./criar-conta.html"
 }
+
+
+
+let response = {
+    statusCode: 153,
+    token: sadsadsadsa,
+    request: {
+        ip: localhost,
+        host: '192.168.1.26',
+        endpoint: '/api/auth/search/name'
+    },
+    data: {
+        data: {
+            id: 1,
+            name: 'teste'
+        },
+        status: true
+    },
+
+
+}
