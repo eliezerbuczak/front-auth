@@ -27,21 +27,44 @@
                 <td class="border-2 border-white">nome</td>
                 <td class="border-2 border-white">email</td>
                 <td class="border-2 border-white">criado em</td>
+                <td class="border-2 border-white">ações</td>
             </tr>
         </thead>
         <tbody id="result" class="border-2 border-white">
             <tr>
+                <td id="id_response" class="border-2 border-white w-1/12">id</td>
+                <td id="name_response" class="border-2 border-white w-4/12">nome</td>
+                <td id="email_response" class="border-2 border-white w-4/12">email</td>
+                <td id="created_at_response" class="border-2 border-white w-1/12">criado em</td>
+                <td class="border-2 border-white space-x-10 content-between w-2/12">
+                    <button onclick="editUser()"
+                        class="text-yellow-300 hover:bg-yellow-200/50 rounded p-1">editar</button>
+                    <button onclick="deleteUser()" class="text-red-600 hover:bg-red-200/50 rounded p-1">excluir</button>
+
+                </td>
+            </tr>
+            <tr id="tr-edit" class="hidden">
                 <td id="id_response" class="border-2 border-white">id</td>
-                <td id="name_response" class="border-2 border-white">nome</td>
-                <td id="email_response" class="border-2 border-white">email</td>
+                <td class="border-2 border-white">
+                    <input id="name_edited" class="" type="text">
+                </td>
+                <td class="border-2 border-white">
+                    <input id="email_edited" class="" type="text">
+                </td>
                 <td id="created_at_response" class="border-2 border-white">criado em</td>
+                <td class="border-2 border-white space-x-10 content-between ">
+                    <button onclick="saveUser()" class="p-1 rounded bg-green-500 ">salvar</button>
+                    <button onclick="cancelEdit()" class="p-1 rounded bg-red-600 ">cancelar</button>
+                </td>
             </tr>
         </tbody>
     </table>
-
-
-    <script src="./js/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/update.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/delete.js"></script>
+
+
 </body>
 
 </html>

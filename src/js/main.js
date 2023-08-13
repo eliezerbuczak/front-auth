@@ -1,3 +1,5 @@
+const url = "http://192.168.1.26/api/auth/";
+
 const login = () => {
 
     const email = document.getElementById("email").value;
@@ -13,7 +15,7 @@ const login = () => {
         }
 
         try {
-            axios.post("http://192.168.1.26/api/auth/login", data)
+            axios.post(`${url}login`, data)
                 .then(function (response) {
                     window.location.href = "./logado.html"
 

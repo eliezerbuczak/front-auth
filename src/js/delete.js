@@ -1,18 +1,14 @@
 const url = "http://192.168.1.26/api/auth/";
 
-const searchName = () => {
+const deleteUser = () => {
 
-    clearTr();
-
-    const name = document.getElementById("name").value;
+    const idUser = document.getElementById("id_response").value;
 
     try {
-        axios.get(`${url}name/${name}`)
+        axios.delete(`${url}name/delete/${idUser}`)
             .then(function (response) {
-                document.getElementById('id_response').innerHTML = response.data.user.id
-                document.getElementById('name_response').innerHTML = response.data.user.name
-                document.getElementById('email_response').innerHTML = response.data.user.email
-                document.getElementById('created_at_response').innerHTML = response.data.user.created_at
+                clearTr();
+                console.log(response.data.message)
             })
             .catch(function (error) {
                 alert(error.message);

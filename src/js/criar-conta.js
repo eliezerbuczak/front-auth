@@ -1,3 +1,5 @@
+const url = "http://192.168.1.26/api/auth/";
+
 const register = () => {
 
     const name = document.getElementById("name").value;
@@ -21,7 +23,7 @@ const register = () => {
             }
 
             try {
-                axios.post("http://192.168.1.26/api/auth/register", data)
+                axios.post(`${url}register`, data)
                     .then(function (response) {
                         alert(response.message)
                         window.location.href = "./index.html"
